@@ -3,19 +3,77 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
     <title>Edit Tugas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Latar belakang abu-abu muda */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            max-width: 600px;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #343a40;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .form-group label {
+            font-weight: 500;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .form-control {
+            border-radius: 8px;
+            padding: 12px;
+            border: 1px solid #ced4da;
+            transition: all 0.3s ease;
+        }
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+        }
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+            transform: translateY(-1px);
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            border-color: #5a6268;
+            transform: translateY(-1px);
+        }
+    </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1>Edit Tugas</h1>
-
+    <div class="container">
+        <h1>Ubah Tugas</h1>
         <form action="/todos/update/<%= todo.id %>" method="POST">
-            <div class="form-group">
-                <label for="task">Tugas:</label>
+            <div class="mb-3">
+                <label for="task" class="form-label">Nama Tugas:</label>
                 <input 
                     type="text" 
                     class="form-control" 
@@ -24,8 +82,10 @@
                     value="<%= todo.task %>" 
                     required>
             </div>
-            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
-            <a href="/todos-list" class="btn btn-secondary">Batal</a>
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                <a href="/todos-list" class="btn btn-secondary">Batal</a>
+            </div>
         </form>
     </div>
 </body>
