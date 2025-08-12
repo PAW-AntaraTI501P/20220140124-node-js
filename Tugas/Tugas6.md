@@ -1,3 +1,6 @@
+Halaman Utama
+<img width="1916" height="888" alt="image" src="https://github.com/user-attachments/assets/065693c1-5494-4795-8869-141ed9ba8b15" />
+
 Halaman daftar todo
 <img width="1911" height="990" alt="image" src="https://github.com/user-attachments/assets/a84a194e-ad99-4bde-a4fc-d0a33d947746" />
 
