@@ -1,0 +1,43 @@
+<style>
+  /* Gaya CSS kustom untuk footer */
+  .custom-footer {
+    background: linear-gradient(135deg, #a8c0ff, #3f2b96);
+    color: #fff; /* Warna teks putih */
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+    padding: 1rem; /* Padding lebih kecil */
+  }
+
+  .custom-footer a {
+    color: #ffffff; /* Warna link putih */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .custom-footer a:hover {
+    color: #f0f0f0; /* Warna link sedikit lebih terang saat di-hover */
+  }
+
+  /* Animasi footer saat muncul */
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .slide-up-animation {
+    animation: slideUp 1s ease-out forwards;
+  }
+</style>
+
+<footer class="custom-footer text-center slide-up-animation">
+  <div class="p-3">
+    Dyok
+    <a href="https://github.com/alandrmn" class="text-white">luv Minji</a>
+  </div>
+</footer>

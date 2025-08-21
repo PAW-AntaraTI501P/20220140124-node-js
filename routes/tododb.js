@@ -3,20 +3,20 @@ import db from '../Database/db.js';
 
 const router = express.Router();
 
-// Endpoint untuk mendapatkan semua tugas (tetap sama)
-router.get('/', (req, res) => {
-    db.query('SELECT * FROM todos', (err, results) => {
-        if (err) return res.status(500).send('Internal Server Error');
-        res.json(results);
-    });
-});
+// Endpoint untuk menampilkan halaman edit tugas
+router.get('/edit/:id', (req, res) => {
+    const idToEdit = req.params.id;
 
-// Endpoint untuk mendapatkan tugas berdasarkan ID (tetap sama)
-router.get('/:id', (req, res) => {
-    db.query('SELECT * FROM todos WHERE id = ?', [req.params.id], (err, results) => {
-        if (err) return res.status(500).send('Internal Server Error');
-        if (results.length === 0) return res.status(404).send('Tugas tidak ditemukan');
-        res.json(results[0]);
+    db.query('SELECT * FROM todos WHERE id = ?', [idToEdit], (err, results) => {
+        if (err) {
+            console.error('Error fetching task for edit:', err);
+            return res.status(500).send('Internal Server Error');
+        }
+        if (results.length === 0) {
+            return res.status(404).send('Tugas tidak ditemukan.');
+        }
+        // Merender file EJS 'edit-todo.ejs' dan mengirimkan data tugas
+        res.render('edit-todo', { todo: results[0] });
     });
 });
 
@@ -32,7 +32,7 @@ router.post('/add', (req, res) => {
             console.error('Error adding task:', err);
             return res.status(500).send('Internal Server Error');
         }
-        res.redirect('/todos-list'); // <--- Redirect ke halaman daftar tugas
+        res.redirect('/todos-list');
     });
 });
 
@@ -49,7 +49,7 @@ router.post('/update/:id', (req, res) => {
         if (results.affectedRows === 0) {
             return res.status(404).send('Tugas tidak ditemukan');
         }
-        res.redirect('/todos-list'); // <--- Redirect ke halaman daftar tugas
+        res.redirect('/todos-list');
     });
 });
 
@@ -65,7 +65,7 @@ router.post('/delete/:id', (req, res) => {
         if (results.affectedRows === 0) {
             return res.status(404).send('Tugas tidak ditemukan');
         }
-        res.redirect('/todos-list'); // <--- Redirect ke halaman daftar tugas
+        res.redirect('/todos-list');
     });
 });
 

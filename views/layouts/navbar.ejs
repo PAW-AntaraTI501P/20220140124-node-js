@@ -1,0 +1,86 @@
+<style>
+  /* Custom Navbar Styles */
+  .custom-navbar {
+    background: linear-gradient(135deg, #a8c0ff, #3f2b96);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 1rem 2rem;
+  }
+  
+  .custom-navbar .navbar-brand {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+  .custom-navbar .nav-link {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .custom-navbar .nav-link:hover,
+  .custom-navbar .nav-link.active {
+    color: #f0f0f0;
+    transform: translateY(-2px);
+  }
+
+  /* Animated underline effect */
+  .custom-navbar .nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+  }
+  
+  .custom-navbar .nav-link:hover::after,
+  .custom-navbar .nav-link.active::after {
+    width: 80%;
+  }
+
+  .custom-navbar .navbar-toggler {
+    border: none;
+  }
+  
+  .custom-navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg custom-navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">My Todo App</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/todos-list">Todo List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

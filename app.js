@@ -1,10 +1,14 @@
 import express from "express";
 import "dotenv/config";
-import db from "./Database/db.js"; 
+import db from "./Database/db.js";
 import tododbRouter from "./routes/tododb.js";
+import expressLayouts from "express-ejs-layouts";
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.set("layout", "layouts/main-layout"); // <-- Tambahkan baris ini
+app.use(expressLayouts);
 
 app.set("view engine", "ejs");
 
