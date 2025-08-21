@@ -1,11 +1,15 @@
 <style>
   /* Custom Navbar Styles */
   .custom-navbar {
-    background: linear-gradient(135deg, #a8c0ff, #3f2b96);
+    background: rgba(255, 255, 255, 0.1); /* Latar belakang transparan */
+    backdrop-filter: blur(10px); /* Efek kaca buram */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     padding: 1rem 2rem;
+    position: sticky; /* Menjadikan navbar tetap di atas */
+    top: 0;
+    z-index: 1000;
   }
-  
+
   .custom-navbar .navbar-brand {
     color: #ffffff;
     font-weight: 700;
@@ -20,7 +24,7 @@
     position: relative;
     transition: all 0.3s ease;
   }
-  
+
   .custom-navbar .nav-link:hover,
   .custom-navbar .nav-link.active {
     color: #f0f0f0;
@@ -40,7 +44,7 @@
     transform: translateX(-50%);
     transition: width 0.3s ease;
   }
-  
+
   .custom-navbar .nav-link:hover::after,
   .custom-navbar .nav-link.active::after {
     width: 80%;
@@ -49,7 +53,7 @@
   .custom-navbar .navbar-toggler {
     border: none;
   }
-  
+
   .custom-navbar .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   }

@@ -58,29 +58,59 @@
             margin-bottom: 30px;
         }
 
-        .btn-primary {
+        .btn {
             font-weight: 600;
             padding: 12px 30px;
             border-radius: 10px;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-            background-color: #0d6efd;
-            border-color: #0d6efd;
             box-shadow: 0 4px 10px rgba(13, 110, 253, 0.2);
+            text-decoration: none;
         }
 
-        .btn-primary:hover {
+        .btn-whatsapp {
+            background-color: #25D366;
+            border-color: #25D366;
+            color: white;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2);
+            margin-bottom: 15px; /* Tambahkan jarak */
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            border-color: #128C7E;
             transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(13, 110, 253, 0.3);
-            background-color: #0b5ed7;
-            border-color: #0a58ca;
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-home {
+            background-color: #6c757d;
+            border-color: #6c757d;
+            color: white;
+        }
+
+        .btn-home:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(108, 117, 125, 0.2);
+            background-color: #5a6268;
+            border-color: #5a6268;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1><i class="fas fa-envelope"></i> Hubungi Kami</h1>
-        <p>Terima kasih telah mengunjungi halaman kontak kami. Silakan kembali ke halaman utama.</p>
-        <a href="/" class="btn btn-primary">Kembali ke Halaman Utama</a>
+        <p>Anda bisa menghubungi saya melalui WhatsApp atau kembali ke halaman utama.</p>
+        
+        <a 
+          href="https://wa.me/6285936710657?text=halo%20dio" 
+          class="btn btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> Chat via WhatsApp
+        </a>
+
+        <a href="/" class="btn btn-home">
+            <i class="fas fa-arrow-left"></i> Kembali ke Halaman Utama
+        </a>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
